@@ -1,0 +1,44 @@
+version: "3.7"
+
+x-app: &app
+  build: .
+  stdin_open: true
+  tty: true
+  volumes:
+    - .:/app:cached
+    - rails_cache:/app/tmp/cache
+    - bundle:/usr/local/bundle
+  environment:
+    EDITOR: vim
+    RAILS_LOG_TO_STDOUT: 1
+    PG_ROOT_PASSWORD: root
+    PG_DATABASE: cgtrader_development
+    PG_USER: postgres
+    PG_PASSWORD: postgres
+    PG_HOST: cgtrader-db
+    PG_PORT: 5432
+services:
+  app:
+    <<: *app
+    ports:
+      - "3000:80"
+    depends_on:
+      - cgtrader-db
+
+  cgtrader-db:
+    image: postgres:14.0-alpine3.14
+    ports:
+      - "5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data/mydata
+    environment:
+      PG_ROOT_PASSWORD: root
+      PG_DATABASE: cgtrader_development
+      PG_USER: postgres
+      PG_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+      PGDATA: /var/lib/postgresql/mydata
+
+volumes:
+  rails_cache:
+  bundle:
