@@ -40,6 +40,12 @@ $ docker-compose run app bundle exec rails db:setup
 $ docker-compose up
 ```
 
+## Run tests
+```bash
+$ docker-compose run app bundle exec rspec
+```
+
+
 ## TODO 
 
 * <del> Change versions of gems, ruby </del>
@@ -47,12 +53,13 @@ $ docker-compose up
 * <del>Add rspec</del> 
 * <del>Add rubocop, rubocop-rails, rubocop-rspec rubocop-performance</del>
 * <del>Update bundler</del>
-* <del>Add docker, docker-compose add readme to how to run</del/>
-* Add simplecov, database_cleaner-active_record, rspec-rails
-* Add controller (rswag/request test) for success index
-* Add controller, route, action index, view
-* Add comment about authorization
+* <del>Add docker, docker-compose add readme to how to run</del>
+* <del>Add controller (rswag/request test) for success index</del>
+* <del>Add controller, route, action index, view</del>
+* <del>Add comment about authorization</del>
+* Add simplecov
 * Add database set import
+* Add database_cleaner-active_record
 * Add seeds
 * Add elasticsearch
 * Add search feature
