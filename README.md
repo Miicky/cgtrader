@@ -7,7 +7,7 @@ Things you may want to cover:
 
 * Ruby version - 3.2.2
 
-* System dependencies - Postgres
+* System dependencies - Docker, Postgres
 
 * Configuration - none
 
@@ -20,6 +20,25 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Setup 
+
+1. To run the application in development build an image:
+```bash
+$ docker-compose build
+```
+
+2. Setup test and development databases:
+
+```bash
+$ docker-compose run app bundle exec rails db:setup
+```
+
+3. To start rails application server execute (port 3000):
+
+```bash
+$ docker-compose up
+```
 
 ## TODO 
 
