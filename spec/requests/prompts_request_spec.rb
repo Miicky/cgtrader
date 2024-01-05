@@ -5,7 +5,7 @@ require 'rails_helper'
 describe 'Prompts' do
   describe 'GET /index' do
     it 'returns http success' do
-      get '/prompts/'
+      get prompts_path
       expect(response).to have_http_status(:ok)
     end
   end
