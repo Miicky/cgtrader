@@ -39,3 +39,4 @@ Things you may want to cover:
 * Add breakeman, bundle-audit
 * Add deployment configs 
 * Improve readme.  
+* Clean Rails
