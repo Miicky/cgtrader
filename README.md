@@ -26,7 +26,7 @@ Things you may want to cover:
 * <del> Change versions of gems, ruby </del>
 * <del>Add todo list to README</del> 
 * <del>Add rspec</del> 
-* Add rubocop, rubocop-rails, rubocop-rspec rubocop-performance
+* <del>Add rubocop, rubocop-rails, rubocop-rspec rubocop-performance</del>
 * Add docker, docker-compose add readme to how to run
 * Add simplecov, database_cleaner-active_record, rspec-rails
 * Add controller (rswag/request test) for success index
