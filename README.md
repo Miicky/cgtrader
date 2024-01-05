@@ -48,8 +48,8 @@ $ docker-compose up
 * <del>Add rubocop, rubocop-rails, rubocop-rspec rubocop-performance</del>
 * <del>Update bundler</del>
 * <del>Add docker, docker-compose add readme to how to run</del>
-* Add controller (rswag/request test) for success index
-* Add controller, route, action index, view
+* <del>Add controller (rswag/request test) for success index</del>
+* <del>Add controller, route, action index, view</del>
 * Add comment about authorization
 * Add simplecov, database_cleaner-active_record, rspec-rails
 * Add database set import
