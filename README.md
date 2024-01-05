@@ -57,7 +57,7 @@ $ docker-compose run app bundle exec rspec
 * <del>Add controller, route, action index, view</del>
 * <del>Add comment about authorization</del>
 * <del>Add simplecov </del>
-* Create Prompt model
+* <del> Create Prompt model</del>
 * Add database set import
 * Add database_cleaner-active_record
 * Add seeds
