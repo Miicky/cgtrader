@@ -56,7 +56,7 @@ $ docker-compose run app bundle exec rspec
 * <del>Add docker, docker-compose add readme to how to run</del>
 * <del>Add controller (rswag/request test) for success index</del>
 * <del>Add controller, route, action index, view</del>
-* Add comment about authorization
+* <del>Add comment about authorization</del>
 * Add simplecov, database_cleaner-active_record, rspec-rails
 * Add database set import
 * Add seeds
