@@ -40,6 +40,12 @@ $ docker-compose run app bundle exec rails db:setup
 $ docker-compose up
 ```
 
+## Run tests
+```bash
+$ docker-compose run app bundle exec rspec
+```
+
+
 ## TODO 
 
 * <del> Change versions of gems, ruby </del>
