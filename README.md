@@ -45,7 +45,6 @@ $ docker-compose up
 $ docker-compose run app bundle exec rspec
 ```
 
-
 ## TODO 
 
 * <del> Change versions of gems, ruby </del>
@@ -57,7 +56,7 @@ $ docker-compose run app bundle exec rspec
 * <del>Add controller (rswag/request test) for success index</del>
 * <del>Add controller, route, action index, view</del>
 * <del>Add comment about authorization</del>
-* Add simplecov
+* <del>Add simplecov </del>
 * Add database set import
 * Add database_cleaner-active_record
 * Add seeds
