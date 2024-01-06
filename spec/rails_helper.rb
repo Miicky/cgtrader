@@ -12,6 +12,7 @@ require 'webmock/rspec'
 
 require 'simplecov'
 SimpleCov.start
+SimpleCov.minimum_coverage 100
 
 DatabaseCleaner.clean_with :truncation
 DatabaseCleaner.strategy = :transaction
