@@ -58,9 +58,8 @@ $ docker-compose run app bundle exec rspec
 * <del>Add comment about authorization</del>
 * <del>Add simplecov </del>
 * <del> Create Prompt model</del>
-* Add database set import
-* Add database_cleaner-active_record
-* Add seeds
+* <del>Add database set import</del>
+* <del>Add database_cleaner-active_record</del>
 * Add elasticsearch
 * Add search feature
 * Add breakeman, bundle-audit
