@@ -46,8 +46,6 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
 
-  config.include FactoryBot::Syntax::Methods
-
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
