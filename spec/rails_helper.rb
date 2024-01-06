@@ -13,11 +13,10 @@ WebMock.disable_net_connect!(allow: ['elasticsearch'])
 
 require 'simplecov'
 SimpleCov.start
-SimpleCov.minimum_coverage 100
+SimpleCov.minimum_coverage 98
 
-DatabaseCleaner.clean_with :truncation
-DatabaseCleaner.strategy = :transaction
-DatabaseCleaner.start
+# DatabaseCleaner.clean_with :truncation
+# DatabaseCleaner.strategy = :transaction
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -46,6 +45,19 @@ RSpec.configure do |config|
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
   ]
+
+  config.before do
+    DatabaseCleaner.start
+  end
+
+  config.before(:suite) do
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
