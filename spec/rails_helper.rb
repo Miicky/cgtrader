@@ -46,20 +46,23 @@ RSpec.configure do |config|
     Rails.root.join('spec/fixtures')
   ]
 
+  config.before do
+    DatabaseCleaner.start
+  end
+
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
     DatabaseCleaner.clean_with(:truncation)
   end
-  config.around do |example|
-    DatabaseCleaner.cleaning do
-      example.run
-    end
+
+  config.after do
+    DatabaseCleaner.clean
   end
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = true
+  # config.use_transactional_fixtures = true
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
@@ -84,7 +87,6 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
-DatabaseCleaner.start
 
 def parsed_response
   JSON.parse(response.body, symbolize_names: true)

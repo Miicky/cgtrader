@@ -3,6 +3,15 @@
 require 'rails_helper'
 
 describe Prompt do
+  before do
+    described_class.__elasticsearch__.create_index!
+    described_class.import(force: true)
+  end
+
+  after do
+    described_class.__elasticsearch__.refresh_index!
+  end
+
   it 'can be created' do
     prompt = described_class.new
     expect(prompt).to be_valid
@@ -20,6 +29,7 @@ describe Prompt do
     # TODO: split expectations into different examples
     it 'Returns expected prompts' do
       prompts.each { |text| described_class.create(text:) }
+      described_class.__elasticsearch__.refresh_index!
       expect(described_class.search(search).count).to eq(4)
       expect(described_class.search(search).first.text).to eq(prompt_first)
       expect(described_class.search(search)[1].text).to eq(prompt_third)
