@@ -2,6 +2,5 @@
 
 # Mapping prompts data
 class Prompt < ApplicationRecord
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
+  include Searchable
 end
