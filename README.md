@@ -40,14 +40,24 @@ $ docker-compose run app bundle exec rails db:setup
 $ docker-compose up
 ```
 
+4. Create elastic import
+```bash
+$ docker-compose run app rake elastic:setupdb
+```
+
 ## Run tests
 ```bash
 $ docker-compose run app bundle exec rspec
 ```
 
+## Import dataset
+```bash
+$ docker-compose run app rake dataset:import
+```
+
 ## TODO 
 
-* <del> Change versions of gems, ruby </del>
+* <del>Change versions of gems, ruby </del>
 * <del>Add todo list to README</del> 
 * <del>Add rspec</del> 
 * <del>Add rubocop, rubocop-rails, rubocop-rspec rubocop-performance</del>
@@ -60,12 +70,14 @@ $ docker-compose run app bundle exec rspec
 * <del> Create Prompt model</del>
 * <del>Add database set import</del>
 * <del>Add database_cleaner-active_record</del>
-* Add elasticsearch
+* <del>Add elasticsearch</del>
 * Add search feature
 * Add breakeman, bundle-audit
 * Add deployment configs 
 * Improve readme.  
 * Clean Rails
+* Add validation for empty text in prompt
+* Stop Analizer - do not count words "in at" in search feature
 ### TODO good to have
 * ./lib/tasks/import_dataset.rake
   * Add logic for unsuccess request
