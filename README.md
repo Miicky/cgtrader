@@ -71,7 +71,9 @@ $ docker-compose run app rake dataset:import
 * <del>Add database set import</del>
 * <del>Add database_cleaner-active_record</del>
 * <del>Add elasticsearch</del>
-* Add search feature
+* <del>Add search feature into model</del>
+* Find and implement patterns for improved search
+* Add UI for search
 * Add breakeman, bundle-audit
 * Add deployment configs 
 * Improve readme.  
@@ -86,3 +88,5 @@ $ docker-compose run app rake dataset:import
   * Move url to credentials
 * ./spec/rake/import_dataset_spec.rb
   * make stun dynamic by offset and length
+* ./app/models/prompt.rb
+  * split expectations into different examples
