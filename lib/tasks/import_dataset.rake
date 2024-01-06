@@ -23,8 +23,10 @@ namespace :dataset do
       parsed_response[:rows].map do |hash|
         Prompt.create(row_idx: hash[:row_idx], text: hash.dig(:row, :Prompt))
       end
+      total_rows = parsed_response[:num_rows_total].to_i
+      Rails.logger.info("Progress #{((offset.to_f / total_rows) * 100).round(2)} %")
       offset += length
-      break if parsed_response[:num_rows_total].to_i <= offset
+      break if total_rows <= offset
     end
 
     # TODO: Possible improvement collect all data and import it once in batches
