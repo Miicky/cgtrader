@@ -5,6 +5,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+gem 'elasticsearch-model', '7.2.1'
+
 # HTTP client
 gem 'faraday', '2.8.1'
 
