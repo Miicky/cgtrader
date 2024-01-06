@@ -69,6 +69,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '3.39.2'
+  gem 'database_cleaner-active_record', '2.1.0'
   # Generate fake data for tests
   gem 'faker', '3.2.2'
   gem 'selenium-webdriver', '4.16.0'
