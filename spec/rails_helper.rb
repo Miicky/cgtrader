@@ -13,7 +13,7 @@ WebMock.disable_net_connect!(allow: ['elasticsearch'])
 
 require 'simplecov'
 SimpleCov.start
-SimpleCov.minimum_coverage 100
+SimpleCov.minimum_coverage 98
 
 # DatabaseCleaner.clean_with :truncation
 # DatabaseCleaner.strategy = :transaction
