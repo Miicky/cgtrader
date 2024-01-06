@@ -5,6 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+# HTTP client
+gem 'faraday', '2.8.1'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '7.1.2'
 
@@ -58,14 +61,19 @@ group :development do
 end
 
 group :development, :test do
-  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', '1.9.1', platforms: %i[mri mingw x64_mingw]
+  # Shell and debug
+  gem 'pry', '0.14.2'
   gem 'rspec-rails', '6.1.0'
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara', '3.39.2'
+  # Generate fake data for tests
+  gem 'faker', '3.2.2'
   gem 'selenium-webdriver', '4.16.0'
+  # Code coverage tracking gem
   gem 'simplecov', '0.22.0'
+  # Stub HTTP requests for testing
+  gem 'webmock', '3.19.1'
 end
