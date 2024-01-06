@@ -8,3 +8,6 @@ AllCops:
 Style/Documentation:
   Exclude:
     - db/migrate/*
+RSpec/DescribeClass:
+  Exclude:
+    - spec/rake/import_dataset_spec.rb
