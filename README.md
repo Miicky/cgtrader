@@ -67,3 +67,11 @@ $ docker-compose run app bundle exec rspec
 * Add deployment configs 
 * Improve readme.  
 * Clean Rails
+### TODO good to have
+* ./lib/tasks/import_dataset.rake
+  * Add logic for unsuccess request
+  * Possible improvement collect all data and import it once in batches.
+* ./spec/support/stubs/dataset_stub.rb
+  * Move url to credentials
+* ./spec/rake/import_dataset_spec.rb
+  * make stun dynamic by offset and length
