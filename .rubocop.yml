@@ -11,3 +11,5 @@ Style/Documentation:
 RSpec/DescribeClass:
   Exclude:
     - spec/rake/import_dataset_spec.rb
+Metrics/BlockLength:
+  Max: 27
