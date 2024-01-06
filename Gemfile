@@ -5,6 +5,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+# HTTP client
+gem 'faraday', '2.8.1'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '7.1.2'
 
@@ -68,4 +71,5 @@ group :test do
   gem 'capybara', '3.39.2'
   gem 'selenium-webdriver', '4.16.0'
   gem 'simplecov', '0.22.0'
+  gem 'webmock', '3.19.1'
 end
