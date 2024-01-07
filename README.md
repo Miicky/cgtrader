@@ -74,9 +74,9 @@ $ docker-compose run app rake dataset:import
 * <del>Add search feature into model</del>
 * <del>Search for 4 k => 4k</del>
 * <del> Add showing all Prompts</del>
-* Add UI for search
-* Add breakeman, bundle-audit
+* <del>Add UI for search</del>
 * Add deployment configs 
+* Add breakeman, bundle-audit
 * Add 20 17 => 2017 analyzer
 * Add 3 d => 3d analyzer
 * Improve readme.  

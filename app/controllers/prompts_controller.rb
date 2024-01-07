@@ -3,6 +3,6 @@
 # Handles prompts-related actions and logic.
 class PromptsController < ApplicationController
   def index
-    @prompts = Prompt.all
+    @prompts = Prompt.search(params[:search])
   end
 end

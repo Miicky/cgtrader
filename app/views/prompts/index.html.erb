@@ -1,14 +1,21 @@
+
+<%= form_with(url: prompts_path, method: :get) do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search" %>
+<% end %>
 <h1>Prompts#index</h1>
 <% if @prompts.present?%>
   <table>
     <thead>
       <tr>
+        <th>#</th>
         <th>Text</th>
       </tr>
     </thead>
     <tbody>
-      <% @prompts.each do |prompt| %>
+      <% @prompts.each_with_index do |prompt, index| %>
         <tr>
+          <td><%= index.to_i + 1 %>
           <td><%= prompt.text %></td>
         </tr>
       <% end %>
