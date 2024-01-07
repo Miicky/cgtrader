@@ -46,6 +46,11 @@ $ docker-compose run app rake elastic:setupdb
 ```
 
 ## Run tests
+It's required to up elastic before running test, as it took time
+```bash
+$ docker-compose up elasticsearch
+```
+After it's up
 ```bash
 $ docker-compose run app bundle exec rspec
 ```
@@ -77,8 +82,9 @@ $ docker-compose run app rake dataset:import
 * <del>Add UI for search</del>
 * <del>Add deployment configs </del>
 * <del>Improve routes for main page</dev>
+* <del> Add 3 d => 3d analyzer</del>
 * Add 20 17 => 2017 analyzer
-* Add 3 d => 3d analyzer
+
 * Add breakeman, bundle-audit
 * Improve readme.  
 * Clean Rails
@@ -93,3 +99,5 @@ $ docker-compose run app rake dataset:import
   * make stun dynamic by offset and length
 * ./app/models/prompt.rb
   * split expectations into different examples
+* Add proper healthcheck for elastic
+* Have different elastic db for different envs
