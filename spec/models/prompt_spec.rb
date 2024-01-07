@@ -69,5 +69,22 @@ describe Prompt, :elasticsearch do
         expect(described_class.search(search).map(&:text)).not_to eq(prompt_third)
       end
     end
+
+    describe 'synonim_filtering' do
+      let(:prompt_first) { 'ttext 4k' }
+      let(:prompt_second) { 'text2 UHD' }
+      let(:prompt_third) { 'text3 highly detailed' }
+      let(:prompt_fourth) { 'Unknown text' }
+      let(:prompts) { [prompt_first, prompt_second, prompt_third, prompt_fourth] }
+      let(:search) { '4k' }
+
+      it 'returns two results' do
+        expect(described_class.search(search).count).to eq(3)
+      end
+
+      it 'returns filtered results' do
+        expect(described_class.search(search).map(&:text)).to contain_exactly(prompt_first, prompt_second, prompt_third)
+      end
+    end
   end
 end

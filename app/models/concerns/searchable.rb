@@ -4,6 +4,7 @@
 module Searchable
   extend ActiveSupport::Concern
   include ReplacementPatterns
+  include FilterSynonym
 
   included do
     include Elasticsearch::Model
@@ -16,11 +17,12 @@ module Searchable
           text_analyzer: {
             type: 'custom',
             tokenizer: 'standard',
-            filter: ['lowercase'],
+            filter: %w[lowercase synonym_filter],
             char_filter: %w[digit_k_capture three_d_capture]
           }
         },
-        char_filter: { digit_k_capture:, three_d_capture: }
+        char_filter: { digit_k_capture:, three_d_capture: },
+        filter: { synonym_filter: }
       }
     } do
       mappings dynamic: 'false' do

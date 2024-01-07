@@ -83,15 +83,20 @@ $ docker-compose run app rake dataset:import
 * <del>Add deployment configs </del>
 * <del>Improve routes for main page</dev>
 * <del> Add 3 d => 3d analyzer</del>
+* <del>Terms like "8k," "4k UHD," "highly detailed have same meaning</del>
 
 ### TODO good to have
+* Add validation for empty text in prompt
 * Add 20 17 => 2017 analyzer
 * Add Igor's => Igor
 * Add logic for emojis
-* Add breakeman, bundle-audit
+* Create searchable index for artists
+* Tagging female angel, handsome samurai"
+* Add score to the view
 * Improve readme.  
-* Clean Rails
-* Add validation for empty text in prompt
+* Add error handling message
+* Clean Rails (requires, unused files)
+* Add breakeman, bundle-audit
 * ./lib/tasks/import_dataset.rake
   * Add logic for unsuccess request
   * Possible improvement collect all data and import it once in batches.
