@@ -73,6 +73,7 @@ $ docker-compose run app rake dataset:import
 * <del>Add elasticsearch</del>
 * <del>Add search feature into model</del>
 * <del>Search for 4 k => 4k</del>
+* <del> Add showing all Prompts</del>
 * Add UI for search
 * Add breakeman, bundle-audit
 * Add deployment configs 
