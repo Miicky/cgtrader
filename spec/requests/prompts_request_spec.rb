@@ -10,10 +10,13 @@ describe 'Prompts' do
     end
 
     describe '#search' do
-      let!(:prompt_searchable) { create(:prompt) }
-      let!(:prompt_not_searchable) { create(:prompt) }
+      let!(:prompt_searchable) { create(:prompt, text: 'first_text') }
+      let!(:prompt_not_searchable) { create(:prompt, text: 'unknown') }
 
-      before { get prompts_path, params: { search: prompt_searchable.text } }
+      before do
+        Prompt.__elasticsearch__.refresh_index!
+        get prompts_path, params: { search: prompt_searchable.text }
+      end
 
       it 'shows searchable prompt' do
         expect(response.body).to include(prompt_searchable.text)
