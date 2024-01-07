@@ -8,10 +8,6 @@ module Searchable
     include Elasticsearch::Model
     include Elasticsearch::Model::Callbacks
 
-    def as_indexed_json(_options = {})
-      as_json(only: [:text])
-    end
-
     # Elasticsearch settings and mappings
     settings index: {
       analysis: {
