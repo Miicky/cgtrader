@@ -84,4 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: <%= ENV.fetch('PG_DB') %>
+  database: <%= ENV.fetch('PG_DB', 'cgtrader_production') %>
