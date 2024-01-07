@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Mapping prompts data
+# Mapping pro
 class Prompt < ApplicationRecord
   include Searchable
 end

@@ -12,7 +12,7 @@ RSpec/DescribeClass:
   Exclude:
     - spec/rake/import_dataset_spec.rb
 Metrics/BlockLength:
-  Max: 27
+  Max: 28
 RSpec/MultipleMemoizedHelpers:
   Exclude:
     - spec/models/prompt_spec.rb
