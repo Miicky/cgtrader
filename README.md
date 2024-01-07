@@ -96,8 +96,7 @@ $ docker-compose run app rake dataset:import
 * ./spec/support/stubs/dataset_stub.rb
   * Move url to credentials
 * ./spec/rake/import_dataset_spec.rb
-  * make stun dynamic by offset and length
-* ./app/models/prompt.rb
-  * split expectations into different examples
+  * make stub dynamic by offset and length
 * Add proper healthcheck for elastic
 * Have different elastic db for different envs
+* Add Pagination
