@@ -25,11 +25,14 @@ describe Prompt, :elasticsearch do
       let(:prompts) { [prompt_first, prompt_second, prompt_third, prompt_fourth, prompt_fifth] }
       let(:search) { 'first prompt' }
 
-      # TODO: split expectations into different examples
-      it 'returns expected prompts' do
+      it 'returns four results' do
         expect(described_class.search(search).count).to eq(4)
-        expect(described_class.search(search).first.text).to eq(prompt_first)
-        expect(described_class.search(search)[1].text).to eq(prompt_third)
+      end
+
+      it 'returns filtered results' do
+        expect(described_class.search(search).map(&:text)).to contain_exactly(
+          prompt_first, prompt_second, prompt_third, prompt_fourth
+        )
       end
     end
 
@@ -42,11 +45,28 @@ describe Prompt, :elasticsearch do
       let(:prompts) { [prompt_first, prompt_second, prompt_third, prompt_fourth, prompt_fifth] }
       let(:search) { '4k' }
 
-      # TODO: split expectations into different examples
-      it 'returns expected prompts' do
+      it 'returns three results' do
         expect(described_class.search(search).count).to eq(3)
-        expect(described_class.search(search).first.text).to eq(prompt_first)
-        expect(described_class.search(search)[1].text).to eq(prompt_second)
+      end
+
+      it 'returns filtered results' do
+        expect(described_class.search(search).map(&:text)).to contain_exactly(prompt_first, prompt_second, prompt_third)
+      end
+    end
+
+    describe 'three_d_analyzer' do
+      let(:prompt_first) { 'text 3d' }
+      let(:prompt_second) { 'text2 3 d' }
+      let(:prompt_third) { 'Unknown text' }
+      let(:prompts) { [prompt_first, prompt_second, prompt_third] }
+      let(:search) { '3d' }
+
+      it 'returns two results' do
+        expect(described_class.search(search).count).to eq(2)
+      end
+
+      it 'returns results withot not matching prompt' do
+        expect(described_class.search(search).map(&:text)).not_to eq(prompt_third)
       end
     end
   end
