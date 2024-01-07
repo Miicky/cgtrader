@@ -84,4 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: damb8efria5vup
+  database: <%= ENV.fetch('PG_DB') %>
