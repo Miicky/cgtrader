@@ -83,13 +83,15 @@ $ docker-compose run app rake dataset:import
 * <del>Add deployment configs </del>
 * <del>Improve routes for main page</dev>
 * <del> Add 3 d => 3d analyzer</del>
-* Add 20 17 => 2017 analyzer
 
+### TODO good to have
+* Add 20 17 => 2017 analyzer
+* Add Igor's => Igor
+* Add logic for emojis
 * Add breakeman, bundle-audit
 * Improve readme.  
 * Clean Rails
 * Add validation for empty text in prompt
-### TODO good to have
 * ./lib/tasks/import_dataset.rake
   * Add logic for unsuccess request
   * Possible improvement collect all data and import it once in batches.
