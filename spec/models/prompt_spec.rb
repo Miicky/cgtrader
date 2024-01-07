@@ -49,5 +49,19 @@ describe Prompt, :elasticsearch do
         expect(described_class.search(search)[1].text).to eq(prompt_second)
       end
     end
+
+    describe 'three_d_analyzer' do
+      let(:prompt_first) { 'text 3d' }
+      let(:prompt_second) { 'text2 3 d' }
+      let(:prompt_third) { 'Unknown text' }
+      let(:prompts) { [prompt_first, prompt_second, prompt_third] }
+      let(:search) { '3d' }
+
+      # TODO: split expectations into different examples
+      it 'returns expected prompts' do
+        expect(described_class.search(search).count).to eq(2)
+        expect(described_class.search(search).map(&:text)).not_to eq(prompt_third)
+      end
+    end
   end
 end
