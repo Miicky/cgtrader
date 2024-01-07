@@ -10,13 +10,17 @@
       <tr>
         <th>#</th>
         <th>Text</th>
+        <th>Score</th>
       </tr>
     </thead>
     <tbody>
+
       <% @prompts.each_with_index do |prompt, index| %>
+            <% binding.pry %>
         <tr>
           <td><%= index.to_i + 1 %>
           <td><%= prompt.text %></td>
+          <td><%= prompt._score %></td>
         </tr>
       <% end %>
     </tbody>
