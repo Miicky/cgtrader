@@ -107,3 +107,4 @@ $ docker-compose run app rake dataset:import
 * Add proper healthcheck for elastic
 * Have different elastic db for different envs
 * Add Pagination
+* Fix Prompt.import
