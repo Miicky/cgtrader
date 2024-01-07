@@ -72,14 +72,15 @@ $ docker-compose run app rake dataset:import
 * <del>Add database_cleaner-active_record</del>
 * <del>Add elasticsearch</del>
 * <del>Add search feature into model</del>
-* Find and implement patterns for improved search
+* <del>Search for 4 k => 4k</del>
 * Add UI for search
 * Add breakeman, bundle-audit
 * Add deployment configs 
+* Add 20 17 => 2017 analyzer
+* Add 3 d => 3d analyzer
 * Improve readme.  
 * Clean Rails
 * Add validation for empty text in prompt
-* Stop Analizer - do not count words "in at" in search feature
 ### TODO good to have
 * ./lib/tasks/import_dataset.rake
   * Add logic for unsuccess request
