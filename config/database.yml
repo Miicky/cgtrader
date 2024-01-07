@@ -84,6 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: cgtrader_production
-  username: cgtrader
-  password: <%= ENV["CGTRADER_DATABASE_PASSWORD"] %>
+  database: damb8efria5vup
