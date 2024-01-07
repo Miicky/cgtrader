@@ -75,10 +75,11 @@ $ docker-compose run app rake dataset:import
 * <del>Search for 4 k => 4k</del>
 * <del> Add showing all Prompts</del>
 * <del>Add UI for search</del>
-* Add deployment configs 
-* Add breakeman, bundle-audit
+* <del>Add deployment configs </del>
+* <del>Improve routes for main page</dev>
 * Add 20 17 => 2017 analyzer
 * Add 3 d => 3d analyzer
+* Add breakeman, bundle-audit
 * Improve readme.  
 * Clean Rails
 * Add validation for empty text in prompt
