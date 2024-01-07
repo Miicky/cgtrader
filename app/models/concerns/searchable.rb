@@ -16,7 +16,7 @@ module Searchable
             type: 'custom',
             tokenizer: 'standard',
             filter: ['lowercase'],
-            char_filter: ['digit_k_capture']
+            char_filter: %w[digit_k_capture digit_d_capture]
           }
         },
         char_filter: {
@@ -24,6 +24,11 @@ module Searchable
             type: 'pattern_replace',
             pattern: '(\\d)\\s+k',
             replacement: '$1k'
+          },
+          digit_d_capture: {
+            type: 'pattern_replace',
+            pattern: '(3)\\s+d',
+            replacement: '$1d'
           }
         }
       }
