@@ -3,6 +3,7 @@
 # Elastic search extention for Prompt model
 module Searchable
   extend ActiveSupport::Concern
+  include ReplacementPatterns
 
   included do
     include Elasticsearch::Model
@@ -12,29 +13,18 @@ module Searchable
     settings index: {
       analysis: {
         analyzer: {
-          digit_k_analyzer: {
+          text_analyzer: {
             type: 'custom',
             tokenizer: 'standard',
             filter: ['lowercase'],
-            char_filter: %w[digit_k_capture digit_d_capture]
+            char_filter: %w[digit_k_capture three_d_capture]
           }
         },
-        char_filter: {
-          digit_k_capture: {
-            type: 'pattern_replace',
-            pattern: '(\\d)\\s+k',
-            replacement: '$1k'
-          },
-          digit_d_capture: {
-            type: 'pattern_replace',
-            pattern: '(3)\\s+d',
-            replacement: '$1d'
-          }
-        }
+        char_filter: { digit_k_capture:, three_d_capture: }
       }
     } do
       mappings dynamic: 'false' do
-        indexes :text, analyzer: 'digit_k_analyzer'
+        indexes :text, analyzer: 'text_analyzer'
       end
     end
   end
