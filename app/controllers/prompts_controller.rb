@@ -2,5 +2,7 @@
 
 # Handles prompts-related actions and logic.
 class PromptsController < ApplicationController
-  def index; end
+  def index
+    @prompts = Prompt.all
+  end
 end

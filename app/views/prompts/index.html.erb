@@ -1,1 +1,17 @@
 <h1>Prompts#index</h1>
+<% if @prompts.present?%>
+  <table>
+    <thead>
+      <tr>
+        <th>Text</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @prompts.each do |prompt| %>
+        <tr>
+          <td><%= prompt.text %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
