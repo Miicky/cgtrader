@@ -5,8 +5,6 @@ require:
 AllCops:
   TargetRubyVersion: 3.2.2
   NewCops: enable
-  Exclude:
-    - config/initializers/elasticsearch.rb
 
 Style/Documentation:
   Exclude:
