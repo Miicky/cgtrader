@@ -11,6 +11,7 @@ Style/Documentation:
 RSpec/DescribeClass:
   Exclude:
     - spec/rake/import_dataset_spec.rb
+    - spec/views/**/*
 Metrics/BlockLength:
   Max: 28
 RSpec/MultipleMemoizedHelpers:

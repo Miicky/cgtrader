@@ -63,6 +63,8 @@ group :development do
 end
 
 group :development, :test do
+  # Test data creation
+  gem 'factory_bot_rails', '6.4.3'
   # Shell and debug
   gem 'pry', '0.14.2'
   gem 'rspec-rails', '6.1.0'
